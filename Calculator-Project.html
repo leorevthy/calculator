@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="cal.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Calculator</h1>
+<div class="container">
+	<div class="calculate">
+		<input type="text" id="inputbox" placeholder="0">
+		<button class="button" onclick="clr()">CLR</button>
+		<button class="button" onclick="del()">Del</button>
+		<button class="button" >Hist</button>
+		<button class="button" onclick="calc('%')" id="mod">%</button>
+		<button class="button" onclick="calc('1')" id="one">1</button>
+		<button class="button" onclick="calc('2')" id="two">2</button>
+		<button class="button" onclick="calc('3')" id="three">3</button>
+		<button class="button" onclick="calc('+')" id="add">+</button>
+		<button class="button" onclick="calc('4')" id="four">4</button>
+		<button class="button" onclick="calc('5')" id="five">5</button>
+		<button class="button" onclick="calc('6')" id="six">6</button>
+		<button class="button" onclick="calc('-')" id="sub">-</button>
+		<button class="button" onclick="calc('7')" id="seven">7</button>
+		<button class="button" onclick="calc('8')" id="eight">8</button>
+		<button class="button" onclick="calc('9')" id="nine">9</button>
+		<button class="button" onclick="calc('*')" id="mul">*</button>
+		<button class="button" onclick="calc('.')" id="dec">.</button>
+		<button class="button" onclick="calc('0')" id="zero">0</button>
+		<button class="button" id="equal" onclick="equals()">=</button>
+		<button class="button" onclick="calc('/')" id="divi">/</button>
+    </div>
+	
+</div>
+<script type="text/javascript">
+	var result=document.getElementById("inputbox");
+	function calc(num) {
+		result.value+=num;
+		return result.value;
+	}
+    function equals() {
+    	try{
+    		result.value=eval(result.value);
+    		return result.value;
+    	}
+    	catch(err){
+    		alert('Invalid input');
+    	}
+		
+			
+    }
+
+	function clr() {
+		result.value="";
+	}
+	function del() {
+		result.value=result.value.slice(0,-1);
+	}
+	
+	
+</script>
+</body>
+</html>
